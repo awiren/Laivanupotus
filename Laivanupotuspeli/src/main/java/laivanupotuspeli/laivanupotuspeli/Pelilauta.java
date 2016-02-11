@@ -129,13 +129,27 @@ public class Pelilauta {
     
 
     public void asetaLaiva(int vaaka, int pysty){
-        //haetaan lista vaakariviltä 2 ja sitten pystylistasta muutetaan oikea kohta ykköseksi
-        pelilauta.get(vaaka).set(pysty,Integer.valueOf(1));
+        
+        //tarkistetaan mahtuuko alus pituutensa puolesta vaakatasoon
+        while(pysty+pituus>laudankoko){
+            System.out.println("Alus ei mahdu tuohon kohtaan!");
+            pyydaKoordinaatit();
+        }
+        //haetaan lista vaakariviltä x ja sitten pystylistasta muutetaan oikea kohta ykköseksi
+        for(int i=0;i<pituus;i++){
+            pelilauta.get(vaaka).set(pysty+i,Integer.valueOf(1));
+        }
         //testataan:
-        for (int row = 0; row <laudankoko; row++) {
+        /*for (int row = 0; row <laudankoko; row++) {
             for (int col = 0; col <laudankoko; col++) {
                 System.out.print("["+ row+","+col+"]");
                 System.out.print("="+pelilauta.get(row).get(col).toString()+" "); //sisältö
+            }
+            System.out.println("\n");
+        }*/
+        for (int row = 0; row <laudankoko; row++) {
+            for (int col = 0; col <laudankoko; col++) {
+                System.out.print(pelilauta.get(row).get(col).toString()+" "); //sisältö
             }
             System.out.println("\n");
         }

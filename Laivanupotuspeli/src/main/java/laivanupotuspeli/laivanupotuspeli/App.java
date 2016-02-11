@@ -1,6 +1,5 @@
 package laivanupotuspeli.laivanupotuspeli;
 import java.util.Scanner;
-import java.util.ArrayList;
 /**
  * Pääohjelma Laivanupotusta varten
  *
@@ -8,7 +7,6 @@ import java.util.ArrayList;
 public class App {
     
     private static Scanner lukija = new Scanner(System.in);
-    private static ArrayList<Integer> laivat = new ArrayList<>(); //taulukko pelin laivoja varten
             //luodaan valintunlainen pelilauta:
     public static Pelilauta pelilauta;
     
@@ -30,13 +28,13 @@ public class App {
         //luodaan valintunlainen pelilauta:
         pelilauta = new Pelilauta(vaikeusaste);
         if(vaikeusaste==1){
-            System.out.println("Valitsit helpon pelin!");
+            System.out.println("Aloitetaan helppo peli!");
         }
         if(vaikeusaste==2){
-            System.out.println("Valitsit normaalin pelin!");
+            System.out.println("Aloitetaan normaali peli!");
         }
         if(vaikeusaste==3){
-            System.out.println("Valitsit vaikean pelin!");
+            System.out.println("Aloitetaan vaikea peli!");
         }
         
         pelilauta.lisaaLaivat();
